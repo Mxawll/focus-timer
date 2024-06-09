@@ -26,7 +26,8 @@ function setMinutes() {
 
    minutes.addEventListener("blur", event => {
       let time = event.currentTarget.textContent
-      time = time > 60 ? 60 : time
+      // time = time > 60 ? 60 : time
+      time = Math.min(60, time)
 
       state.minutes = time
       state.seconds = 0
