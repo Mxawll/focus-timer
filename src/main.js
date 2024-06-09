@@ -1,4 +1,4 @@
 import "./toggle-mode.js"
 import * as FocusTimer from "../src/focus-timer/index.js"
 
-FocusTimer.start(0, 0)
+FocusTimer.start(25, 0)
