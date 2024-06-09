@@ -1,0 +1,111 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+:root {
+   --hue: 194;
+   --bg-color: hsl(var(--hue), 5%, 7%);
+   --text-color: hsl(var(--hue), 40%, 98%);
+   --primary-color: hsl(var(--hue), 100%, 63%);
+   --controls-bg-color: hsl(var(--hue), 0%, 14%);
+   --secondary-color-button: hsl(var(--hue), 40%, 98%);
+
+   font-size: clamp(60%, 1% + 2vw, 100%);
+}
+
+html.light {
+   --bg-color: hsl(var(--hue), 40%, 98%);
+   --text-color: hsl(var(--hue), 5%, 7%);
+   --controls-bg-color: hsl(var(--hue), 0%, 14%);
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon {
+   display: none;
+}
+
+.flex {
+   display: flex;
+}
+
+.transition {
+   transition: background .5s, color .5s;
+}
+
+.secondary {
+   color: var(--secondary-color-button);
+}
+
+.sr-only {
+   width: 1px;
+   height: 1px;
+   overflow: hidden;
+   appearance: none;
+   position: absolute;
+
+   padding: 0;
+   margin: -1px;
+   border-width: 0;
+   white-space: nowrap;
+   clip: rect(0, 0, 0, 0);
+}
+
+body {
+   display: grid;
+   place-content: center;
+   height: 100vh;
+
+   font-family: "Roboto", sans-serif;
+   color: var(--text-color);
+
+   background: var(--bg-color);
+}
+
+.app {
+   display: grid;
+   place-items: center;
+}
+
+#toggle-mode {
+   position: absolute;
+   top: 2rem;
+   right: 2rem;
+
+   font-size: 2rem;
+   color: var(--text-color);
+}
+
+button {
+   border: none;
+   cursor: pointer;
+   background: transparent;
+
+   font-size: 4rem;
+   color: var(--primary-color);
+}
+
+.timer {
+   font-size: 6rem;
+   color: var(--text-color);
+   font-weight: 700;
+   text-transform: uppercase;
+}
+
+#controls {
+   padding: 1.375rem 2.5rem;
+   border-radius: 62.4375rem;
+   background: var(--controls-bg-color);
+
+   gap: 1rem;
+}
+
+.running .ph-play-circle,
+.running .ph-timer,
+.music-on .ph-speaker-none,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle,
+html:not(.music-on) .ph-speaker-high {
+   display: none;
+}
